@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" style="background:#09090c; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="grad-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#18181f"/>
+      <stop offset="100%" stop-color="#111116"/>
+    </linearGradient>
+    <linearGradient id="accent-lime" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d4ff00"/>
+      <stop offset="100%" stop-color="#a8db00"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer App Window Frame -->
+  <rect x="25" y="25" width="1150" height="625" rx="14" fill="#0f0f14" stroke="#26262e" stroke-width="1.5" filter="url(#shadow)"/>
+  
+  <!-- Window Header / Title Bar -->
+  <path d="M 25 39 Q 25 25 39 25 L 1161 25 Q 1175 25 1175 39 L 1175 68 L 25 68 Z" fill="#16161d"/>
+  <circle cx="52" cy="46" r="6" fill="#ef4444"/>
+  <circle cx="72" cy="46" r="6" fill="#eab308"/>
+  <circle cx="92" cy="46" r="6" fill="#22c55e"/>
+  
+  
+  <text x="130" y="51" fill="#888" font-size="13" font-family="monospace">localhost:8501 • Streamlit • Python ML MovieLens Recommendation Engine</text>
+  <rect x="980" y="36" width="170" height="22" rx="4" fill="#222" stroke="#333"/>
+  <text x="990" y="51" fill="#d4ff00" font-size="11" font-weight="bold">● Model: Cosine Sim</text>
+  
+  <!-- Search Bar -->
+  <g transform="translate(60, 95)">
+    <rect width="1080" height="46" rx="8" fill="#181822" stroke="#383848" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#aaa" font-size="15">🔍 Selected Movie: <tspan fill="#fff" font-weight="bold">Interstellar (2014)</tspan>  |  Genre: Adventure, Drama, Sci-Fi  |  Director: Christopher Nolan</text>
+    <rect x="940" y="8" width="125" height="30" rx="6" fill="#d4ff00"/>
+    <text x="965" y="28" fill="#000" font-size="13" font-weight="bold">Recommend</text>
+  </g>
+  
+  <!-- Metric Header -->
+  <g transform="translate(60, 160)">
+    <text x="0" y="16" fill="#fff" font-size="17" font-weight="bold">Top Algorithmic Matches Based on Content Similarity &amp; User Ratings</text>
+    <text x="0" y="38" fill="#888" font-size="12">Computed via TF-IDF Vector Space Analysis &amp; Nearest Neighbors Matrix (k=5)</text>
+  </g>
+  
+  <!-- 4 Movie Cards -->
+  <g transform="translate(60, 220)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="250" height="380" rx="10" fill="#15151e" stroke="#2e2e3d"/>
+    <rect x="15" y="15" width="220" height="230" rx="8" fill="#1e1e2d"/>
+    <rect x="15" y="15" width="220" height="230" rx="8" fill="#252538"/>
+    <text x="125" y="125" fill="#fff" font-size="28" font-weight="bold" text-anchor="middle">INCEPTION</text>
+    <text x="125" y="150" fill="#888" font-size="12" text-anchor="middle">Christopher Nolan (2010)</text>
+    <rect x="30" y="210" width="190" height="24" rx="4" fill="#000" opacity="0.6"/>
+    <text x="125" y="226" fill="#d4ff00" font-size="12" font-weight="bold" text-anchor="middle">98.4% Match Score</text>
+    <text x="20" y="275" fill="#fff" font-size="16" font-weight="bold">Inception</text>
+    <text x="20" y="298" fill="#aaa" font-size="12">Sci-Fi, Action, Thriller</text>
+    <text x="20" y="325" fill="#888" font-size="11">Shared Themes: Space-Time, Dreams, High Concept Narrative</text>
+    <rect x="20" y="345" width="210" height="6" rx="3" fill="#222"/>
+    <rect x="20" y="345" width="206" height="6" rx="3" fill="#d4ff00"/>
+  </g>
+  
+  <g transform="translate(335, 220)">
+    <!-- Card 2 -->
+    <rect x="0" y="0" width="250" height="380" rx="10" fill="#15151e" stroke="#2e2e3d"/>
+    <rect x="15" y="15" width="220" height="230" rx="8" fill="#252538"/>
+    <text x="125" y="125" fill="#fff" font-size="26" font-weight="bold" text-anchor="middle">THE MARTIAN</text>
+    <text x="125" y="150" fill="#888" font-size="12" text-anchor="middle">Ridley Scott (2015)</text>
+    <rect x="30" y="210" width="190" height="24" rx="4" fill="#000" opacity="0.6"/>
+    <text x="125" y="226" fill="#d4ff00" font-size="12" font-weight="bold" text-anchor="middle">94.1% Match Score</text>
+    <text x="20" y="275" fill="#fff" font-size="16" font-weight="bold">The Martian</text>
+    <text x="20" y="298" fill="#aaa" font-size="12">Sci-Fi, Adventure, Survival</text>
+    <text x="20" y="325" fill="#888" font-size="11">Shared Themes: Deep Space, Astronautics, Physics Modeling</text>
+    <rect x="20" y="345" width="210" height="6" rx="3" fill="#222"/>
+    <rect x="20" y="345" width="197" height="6" rx="3" fill="#d4ff00"/>
+  </g>
+  
+  <g transform="translate(610, 220)">
+    <!-- Card 3 -->
+    <rect x="0" y="0" width="250" height="380" rx="10" fill="#15151e" stroke="#2e2e3d"/>
+    <rect x="15" y="15" width="220" height="230" rx="8" fill="#252538"/>
+    <text x="125" y="125" fill="#fff" font-size="28" font-weight="bold" text-anchor="middle">GRAVITY</text>
+    <text x="125" y="150" fill="#888" font-size="12" text-anchor="middle">Alfonso Cuaron (2013)</text>
+    <rect x="30" y="210" width="190" height="24" rx="4" fill="#000" opacity="0.6"/>
+    <text x="125" y="226" fill="#d4ff00" font-size="12" font-weight="bold" text-anchor="middle">91.6% Match Score</text>
+    <text x="20" y="275" fill="#fff" font-size="16" font-weight="bold">Gravity</text>
+    <text x="20" y="298" fill="#aaa" font-size="12">Sci-Fi, Thriller, Space</text>
+    <text x="20" y="325" fill="#888" font-size="11">Shared Themes: Orbit, Space Survival, Visual FX</text>
+    <rect x="20" y="345" width="210" height="6" rx="3" fill="#222"/>
+    <rect x="20" y="345" width="192" height="6" rx="3" fill="#d4ff00"/>
+  </g>
+  
+  <g transform="translate(885, 220)">
+    <!-- Card 4 -->
+    <rect x="0" y="0" width="250" height="380" rx="10" fill="#15151e" stroke="#2e2e3d"/>
+    <rect x="15" y="15" width="220" height="230" rx="8" fill="#252538"/>
+    <text x="125" y="125" fill="#fff" font-size="28" font-weight="bold" text-anchor="middle">ARRIVAL</text>
+    <text x="125" y="150" fill="#888" font-size="12" text-anchor="middle">Denis Villeneuve (2016)</text>
+    <rect x="30" y="210" width="190" height="24" rx="4" fill="#000" opacity="0.6"/>
+    <text x="125" y="226" fill="#d4ff00" font-size="12" font-weight="bold" text-anchor="middle">88.5% Match Score</text>
+    <text x="20" y="275" fill="#fff" font-size="16" font-weight="bold">Arrival</text>
+    <text x="20" y="298" fill="#aaa" font-size="12">Sci-Fi, Mystery, Drama</text>
+    <text x="20" y="325" fill="#888" font-size="11">Shared Themes: Non-linear Time, Scientific Analysis</text>
+    <rect x="20" y="345" width="210" height="6" rx="3" fill="#222"/>
+    <rect x="20" y="345" width="185" height="6" rx="3" fill="#d4ff00"/>
+  </g>
+
+</svg>

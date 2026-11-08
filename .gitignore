@@ -14,12 +14,6 @@ dist-ssr/
 .env.local
 .env.*.local
 
-
-
-# Dependencies and build files
-node_modules/
-dist/
-
 # Editor directories
 .vscode/*
 !.vscode/extensions.json
@@ -34,8 +28,3 @@ dist/
 # Local tools
 tools/node.zip
 tools/nodejs/
-
-# Environment files
-.env
-.env.*
-!.env.example

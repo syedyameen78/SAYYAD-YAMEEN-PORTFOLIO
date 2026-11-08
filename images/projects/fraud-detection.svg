@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" style="background:#09090c; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+  <defs>
+    <linearGradient id="grad-bar" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#18181f"/>
+      <stop offset="100%" stop-color="#111116"/>
+    </linearGradient>
+    <linearGradient id="accent-lime" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d4ff00"/>
+      <stop offset="100%" stop-color="#a8db00"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  
+  <!-- Outer App Window Frame -->
+  <rect x="25" y="25" width="1150" height="625" rx="14" fill="#0f0f14" stroke="#26262e" stroke-width="1.5" filter="url(#shadow)"/>
+  
+  <!-- Window Header / Title Bar -->
+  <path d="M 25 39 Q 25 25 39 25 L 1161 25 Q 1175 25 1175 39 L 1175 68 L 25 68 Z" fill="#16161d"/>
+  <circle cx="52" cy="46" r="6" fill="#ef4444"/>
+  <circle cx="72" cy="46" r="6" fill="#eab308"/>
+  <circle cx="92" cy="46" r="6" fill="#22c55e"/>
+  
+  
+  <text x="130" y="51" fill="#888" font-size="13" font-family="monospace">SecurePay AI • Real-Time Credit Card Fraud Detection Pipeline (XGBoost)</text>
+  <rect x="990" y="36" width="160" height="22" rx="4" fill="#222" stroke="#333"/>
+  <text x="1000" y="51" fill="#d4ff00" font-size="11" font-weight="bold">● ROC-AUC: 0.984</text>
+  
+  <!-- KPI Row -->
+  <g transform="translate(60, 90)">
+    <rect x="0" y="0" width="250" height="75" rx="8" fill="#13131c" stroke="#292938"/>
+    <text x="20" y="26" fill="#888" font-size="11">TRANSACTIONS ANALYZED</text>
+    <text x="20" y="56" fill="#fff" font-size="24" font-weight="bold">284,807</text>
+    
+    <rect x="275" y="0" width="250" height="75" rx="8" fill="#13131c" stroke="#292938"/>
+    <text x="295" y="26" fill="#888" font-size="11">FRAUD RATE (IMBALANCED)</text>
+    <text x="295" y="56" fill="#f59e0b" font-size="24" font-weight="bold">0.172 %</text>
+    
+    <rect x="550" y="0" width="250" height="75" rx="8" fill="#13131c" stroke="#292938"/>
+    <text x="570" y="26" fill="#888" font-size="11">FRAUD PREVENTION SAVINGS</text>
+    <text x="570" y="56" fill="#22c55e" font-size="24" font-weight="bold">$ 1,428,950</text>
+    
+    <rect x="825" y="0" width="255" height="75" rx="8" fill="#13131c" stroke="#292938"/>
+    <text x="845" y="26" fill="#888" font-size="11">INFERENCE LATENCY</text>
+    <text x="845" y="56" fill="#d4ff00" font-size="24" font-weight="bold">14.2 ms</text>
+  </g>
+  
+  <!-- Live Transactions Table -->
+  <g transform="translate(60, 185)">
+    <rect width="1080" height="425" rx="10" fill="#13131c" stroke="#292938"/>
+    <text x="25" y="32" fill="#fff" font-size="16" font-weight="bold">Live Streaming Transactions &amp; Risk Scoring Engine</text>
+    
+    <!-- Table Header -->
+    <rect x="25" y="50" width="1030" height="35" rx="5" fill="#1b1b26"/>
+    <text x="40" y="73" fill="#d4ff00" font-size="12" font-weight="bold">TX ID</text>
+    <text x="180" y="73" fill="#d4ff00" font-size="12" font-weight="bold">TIMESTAMP</text>
+    <text x="340" y="73" fill="#d4ff00" font-size="12" font-weight="bold">AMOUNT ($)</text>
+    <text x="490" y="73" fill="#d4ff00" font-size="12" font-weight="bold">MERCHANT</text>
+    <text x="690" y="73" fill="#d4ff00" font-size="12" font-weight="bold">RISK SCORE</text>
+    <text x="890" y="73" fill="#d4ff00" font-size="12" font-weight="bold">DECISION</text>
+    
+    <!-- Row 1 (Normal) -->
+    <text x="40" y="120" fill="#ddd" font-size="12.5" font-family="monospace">TX-984210</text>
+    <text x="180" y="120" fill="#aaa" font-size="12">16:42:08.12</text>
+    <text x="340" y="120" fill="#fff" font-size="12.5">$ 48.50</text>
+    <text x="490" y="120" fill="#aaa" font-size="12">Amazon Retail</text>
+    <text x="690" y="120" fill="#22c55e" font-size="12" font-weight="bold">0.03 (Low)</text>
+    <rect x="880" y="104" width="90" height="22" rx="4" fill="#14532d"/>
+    <text x="925" y="119" fill="#86efac" font-size="11" font-weight="bold" text-anchor="middle">APPROVED</text>
+    <line x1="25" y1="135" x2="1055" y2="135" stroke="#222"/>
+    
+    <!-- Row 2 (HIGH RISK FRAUD) -->
+    <rect x="25" y="140" width="1030" height="40" fill="#3b0707" opacity="0.6"/>
+    <text x="40" y="165" fill="#fca5a5" font-size="12.5" font-family="monospace" font-weight="bold">TX-984211</text>
+    <text x="180" y="165" fill="#fca5a5" font-size="12">16:42:09.45</text>
+    <text x="340" y="165" fill="#ef4444" font-size="13" font-weight="bold">$ 4,890.00</text>
+    <text x="490" y="165" fill="#fca5a5" font-size="12">Offshore Crypto Xfer</text>
+    <text x="690" y="165" fill="#ef4444" font-size="12" font-weight="bold">0.96 (CRITICAL)</text>
+    <rect x="880" y="149" width="90" height="22" rx="4" fill="#7f1d1d"/>
+    <text x="925" y="164" fill="#fca5a5" font-size="11" font-weight="bold" text-anchor="middle">BLOCKED</text>
+    <line x1="25" y1="185" x2="1055" y2="185" stroke="#222"/>
+    
+    <!-- Row 3 (Normal) -->
+    <text x="40" y="210" fill="#ddd" font-size="12.5" font-family="monospace">TX-984212</text>
+    <text x="180" y="210" fill="#aaa" font-size="12">16:42:10.02</text>
+    <text x="340" y="210" fill="#fff" font-size="12.5">$ 12.99</text>
+    <text x="490" y="210" fill="#aaa" font-size="12">Spotify Premium</text>
+    <text x="690" y="210" fill="#22c55e" font-size="12" font-weight="bold">0.01 (Low)</text>
+    <rect x="880" y="194" width="90" height="22" rx="4" fill="#14532d"/>
+    <text x="925" y="209" fill="#86efac" font-size="11" font-weight="bold" text-anchor="middle">APPROVED</text>
+    <line x1="25" y1="225" x2="1055" y2="225" stroke="#222"/>
+    
+    <!-- Row 4 (Medium Risk / Stepped Up Auth) -->
+    <text x="40" y="250" fill="#ddd" font-size="12.5" font-family="monospace">TX-984213</text>
+    <text x="180" y="250" fill="#aaa" font-size="12">16:42:11.88</text>
+    <text x="340" y="250" fill="#fff" font-size="12.5">$ 820.00</text>
+    <text x="490" y="250" fill="#aaa" font-size="12">Apple Store Online</text>
+    <text x="690" y="250" fill="#f59e0b" font-size="12" font-weight="bold">0.68 (Medium)</text>
+    <rect x="880" y="234" width="90" height="22" rx="4" fill="#78350f"/>
+    <text x="925" y="249" fill="#fde68a" font-size="11" font-weight="bold" text-anchor="middle">2FA OTP</text>
+    <line x1="25" y1="265" x2="1055" y2="265" stroke="#222"/>
+    
+    <!-- Footer info -->
+    <text x="25" y="390" fill="#888" font-size="12">Features: PCA Transformed Variables (V1-V28) + Amount Normalized  |  Sampling: SMOTE Oversampling</text>
+    <text x="25" y="410" fill="#d4ff00" font-size="11">✓ Model trained in Python using Scikit-Learn, Imbalanced-Learn, and XGBoost Classifier</text>
+  </g>
+
+</svg>

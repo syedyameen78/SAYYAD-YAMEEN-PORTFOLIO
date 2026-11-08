@@ -781,6 +781,93 @@ nav ul li a:hover{
     margin:0;
 }
 
+/* ================= CERTIFICATE VIEWER MODAL ================= */
+
+.cert-modal{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.92);
+    backdrop-filter:blur(14px);
+    z-index:99999;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    opacity:0;
+    transition:opacity .3s ease;
+}
+
+.cert-modal.active{
+    display:flex;
+    opacity:1;
+}
+
+.cert-modal-content{
+    width:100%;
+    max-width:960px;
+    background:#111;
+    border:1px solid #333;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 25px 80px rgba(0,0,0,0.9), 0 0 40px rgba(212,255,0,0.2);
+    transform:scale(0.93);
+    transition:transform .3s ease;
+}
+
+.cert-modal.active .cert-modal-content{
+    transform:scale(1);
+}
+
+.cert-modal-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 24px;
+    background:#0a0a0d;
+    border-bottom:1px solid #222;
+}
+
+.cert-modal-title{
+    font-size:16px;
+    font-weight:bold;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.cert-modal-body{
+    padding:24px;
+    background:#08080a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    max-height:75vh;
+    overflow:auto;
+}
+
+.cert-modal-body img{
+    max-width:100%;
+    max-height:70vh;
+    border-radius:8px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.8);
+    display:block;
+}
+
+.cert-modal-footer{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 24px;
+    background:#0a0a0d;
+    border-top:1px solid #222;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
 /* ================= ROBOT DOCS MODAL ================= */
 
 .docs-modal{
@@ -1346,7 +1433,7 @@ footer span{
         </span>
 
         <h1>
-            I'M <span>SAYYAD</span>
+            I'M <span>YAMEEN SAYYAD</span>
         </h1>
 
         <h2>
@@ -1405,10 +1492,11 @@ footer span{
         <p>Technologies</p>
     </div>
 
-    <div class="stat">
+    <div class="stat" onclick="openCertModal()" style="cursor:pointer; position:relative;" title="Click to view official certificate">
         <i class="fa-solid fa-award"></i>
         <h2 style="font-size:26px;">Certified</h2>
         <p>Python & AI/ML</p>
+        <span style="display:inline-block; margin-top:8px; font-size:11px; color:var(--lime); background:rgba(212,255,0,0.1); border:1px solid rgba(212,255,0,0.3); padding:3px 10px; border-radius:12px;"><i class="fa-solid fa-eye"></i> View Certificate</span>
     </div>
 
     <div class="stat">
@@ -1870,7 +1958,7 @@ footer span{
         <div class="project">
 
             <div class="project-image">
-                <img src="images/projects/movie-analyzer.jpg" alt="Movie Recommendation">
+                <img src="images/projects/movie-analyzer.svg" alt="Movie Recommendation">
             </div>
 
             <div class="project-content">
@@ -1904,7 +1992,7 @@ footer span{
         <div class="project">
 
             <div class="project-image">
-                <img src="images/projects/portfolio-system.jpg" alt="Portfolio Website Design">
+                <img src="images/projects/portfolio-system.svg" alt="Portfolio Website Design">
             </div>
 
             <div class="project-content">
@@ -1938,7 +2026,7 @@ footer span{
         <div class="project">
 
             <div class="project-image">
-                <img src="images/projects/fake-review-detection.jpg" alt="Fake Review Detection">
+                <img src="images/projects/fake-review-detection.svg" alt="Fake Review Detection">
             </div>
 
             <div class="project-content">
@@ -1972,7 +2060,7 @@ footer span{
         <div class="project">
 
             <div class="project-image">
-                <img src="images/projects/fraud-detection.jpg" alt="Fraud Detection System">
+                <img src="images/projects/fraud-detection.svg" alt="Fraud Detection System">
             </div>
 
             <div class="project-content">
@@ -2006,7 +2094,7 @@ footer span{
         <div class="project">
 
             <div class="project-image">
-                <img src="images/projects/smart-iot.jpg" alt="Smart IoT System">
+                <img src="images/projects/smart-iot.svg" alt="Smart IoT System">
             </div>
 
             <div class="project-content">
@@ -2055,42 +2143,79 @@ footer span{
 
     </div>
 
-    <div class="cert-container reveal">
+    <div class="cert-container reveal" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
 
-        <div class="cert">
+        <!-- REAL VERIFIED CERTIFICATE CARD -->
+        <div class="cert" style="text-align:left; padding:24px; border:1px solid var(--lime); background:#121216; border-radius:14px; position:relative; overflow:hidden;">
+            
+            <div style="position:relative; border-radius:8px; overflow:hidden; border:1px solid #333; margin-bottom:18px; cursor:pointer;" onclick="openCertModal()" title="Click to view full certificate">
+                <img src="images/certificates/python-aiml-certificate.jpg" alt="Python & AI & ML Certificate - Syed Yameen" style="width:100%; height:200px; object-fit:cover; display:block; transition:transform .3s;" onmouseover="this.style.transform='scale(1.04)'" onmouseout="this.style.transform='scale(1)'">
+                <div style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.85); color:var(--lime); padding:4px 10px; border-radius:20px; font-size:11px; font-weight:bold; border:1px solid var(--lime);"><i class="fa-solid fa-magnifying-glass-plus"></i> View Full Certificate</div>
+            </div>
 
-            <i class="fa-brands fa-python"></i>
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+                <i class="fa-solid fa-circle-check" style="color:var(--lime); font-size:18px;"></i>
+                <span style="color:var(--lime); font-size:12px; font-weight:bold; text-transform:uppercase; letter-spacing:1px;">Official Internship Certificate</span>
+            </div>
 
-            <h3>Python Certified</h3>
+            <h3 style="font-size:20px; color:#fff; margin-bottom:8px;">Python & AI & ML Certified</h3>
 
-            <p>
-                Python Programming, OOP & Data Structures Certification
+            <p style="color:#aaa; font-size:13.5px; line-height:1.6; margin-bottom:12px;">
+                Awarded to <strong>Syed Yameen</strong> (Reg. No: <code>23028-AIM-051</code>) by <strong>OTP Technologies Pvt. Ltd., Eluru</strong> for completing an intensive <strong>480-Hour</strong> industrial internship in Python & AI & ML.
             </p>
+
+            <div style="font-size:12px; color:#777; margin-bottom:16px;">
+                <span><i class="fa-solid fa-calendar-check" style="color:var(--lime);"></i> Issued: 15/Nov/2025</span> • 
+                <span><i class="fa-solid fa-hashtag" style="color:var(--lime);"></i> Sr. No: 7348</span>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <button onclick="openCertModal()" style="padding:9px 16px; border-radius:6px; background:var(--lime); color:#000; font-weight:bold; font-size:13px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px;">
+                    <i class="fa-solid fa-eye"></i> View Certificate
+                </button>
+                <a href="images/certificates/python-aiml-certificate.jpg" download="Syed_Yameen_Python_AIML_Certificate.jpg" style="padding:9px 16px; border-radius:6px; background:#1e1e24; color:#fff; font-weight:600; font-size:13px; border:1px solid #444; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                    <i class="fa-solid fa-download"></i> Download
+                </a>
+            </div>
 
         </div>
 
-        <div class="cert">
-
-            <i class="fa-solid fa-brain"></i>
-
-            <h3>AI & ML Certified</h3>
-
-            <p>
-                Artificial Intelligence, Machine Learning & Neural Networks
-            </p>
-
+        <!-- SPECIALIZATION CARD 2 -->
+        <div class="cert" style="text-align:left; padding:24px; border:1px solid #222; background:#111; border-radius:14px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <i class="fa-solid fa-brain" style="font-size:35px; color:var(--lime); margin-bottom:15px; display:block;"></i>
+                <h3 style="font-size:20px; color:#fff; margin-bottom:10px;">Artificial Intelligence & Machine Learning</h3>
+                <p style="color:#aaa; font-size:13.5px; line-height:1.6; margin-bottom:15px;">
+                    Core competency covering Supervised & Unsupervised Machine Learning, Neural Networks, Computer Vision, Model Evaluation, and Predictive System Deployment.
+                </p>
+                <div style="font-size:12.5px; color:#888;">
+                    <p style="margin-bottom:6px;">✓ Scikit-Learn, TensorFlow, PyTorch</p>
+                    <p style="margin-bottom:6px;">✓ Deep Learning & Data Preprocessing</p>
+                    <p style="margin-bottom:6px;">✓ Model Deployment & Performance Optimization</p>
+                </div>
+            </div>
+            <div style="margin-top:20px; padding-top:15px; border-top:1px solid #222;">
+                <span style="font-size:12px; color:var(--lime); font-weight:600;">Academic Credential • B.Tech Data Science & Diploma AI/ML</span>
+            </div>
         </div>
 
-        <div class="cert">
-
-            <i class="fa-solid fa-award"></i>
-
-            <h3>Data Science & Analytics</h3>
-
-            <p>
-                Data Processing, Statistical Modeling & Visualization
-            </p>
-
+        <!-- SPECIALIZATION CARD 3 -->
+        <div class="cert" style="text-align:left; padding:24px; border:1px solid #222; background:#111; border-radius:14px; display:flex; flex-direction:column; justify-content:space-between;">
+            <div>
+                <i class="fa-brands fa-python" style="font-size:35px; color:var(--lime); margin-bottom:15px; display:block;"></i>
+                <h3 style="font-size:20px; color:#fff; margin-bottom:10px;">Python Programming Mastery</h3>
+                <p style="color:#aaa; font-size:13.5px; line-height:1.6; margin-bottom:15px;">
+                    Advanced Python programming including Object-Oriented Programming (OOP), Data Structures & Algorithms, Automated Data Pipelines, and Backend API Integration.
+                </p>
+                <div style="font-size:12.5px; color:#888;">
+                    <p style="margin-bottom:6px;">✓ NumPy, Pandas, Matplotlib, Seaborn</p>
+                    <p style="margin-bottom:6px;">✓ Object-Oriented Architecture & Unit Testing</p>
+                    <p style="margin-bottom:6px;">✓ Clean Code & Algorithm Optimization</p>
+                </div>
+            </div>
+            <div style="margin-top:20px; padding-top:15px; border-top:1px solid #222;">
+                <span style="font-size:12px; color:var(--lime); font-weight:600;">Verified Skill • Industrial Internship & Applied Projects</span>
+            </div>
         </div>
 
     </div>
@@ -2509,6 +2634,34 @@ async function sendMessage(event){
 
 </script>
 
+<!-- ================= CERTIFICATE LIGHTBOX MODAL ================= -->
+<div id="certModal" class="cert-modal" onclick="closeCertModal(event)">
+    <div class="cert-modal-content">
+        <div class="cert-modal-header">
+            <div class="cert-modal-title">
+                <i class="fa-solid fa-award" style="color:var(--lime);"></i>
+                <span>Certificate of Completion — Python &amp; AI &amp; ML | Syed Yameen</span>
+            </div>
+            <button class="docs-close-btn" onclick="closeCertModal()" aria-label="Close Certificate">&times;</button>
+        </div>
+        <div class="cert-modal-body">
+            <img src="images/certificates/python-aiml-certificate.jpg" alt="Syed Yameen - Python &amp; AI &amp; ML Certificate of Completion">
+        </div>
+        <div class="cert-modal-footer">
+            <div style="font-size:13px; color:#aaa;">
+                <span style="color:#fff; font-weight:bold;">Issued by:</span> OTP Technologies Pvt. Ltd., Eluru • 
+                <span style="color:#fff; font-weight:bold;">Student:</span> Syed Yameen (23028-AIM-051)
+            </div>
+            <div style="display:flex; gap:10px;">
+                <a href="images/certificates/python-aiml-certificate.jpg" download="Syed_Yameen_Python_AIML_Certificate.jpg" class="docs-btn docs-btn-primary">
+                    <i class="fa-solid fa-download"></i> Download Certificate
+                </a>
+                <button onclick="closeCertModal()" class="docs-btn">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- ================= AI ROBOT DOCUMENTATION MODAL ================= -->
 <div id="docsModal" class="docs-modal" onclick="closeRobotDocs(event)">
     <div class="docs-modal-content">
@@ -2668,19 +2821,38 @@ async function sendMessage(event){
             <button class="video-close-btn" onclick="closeRobotVideo()" aria-label="Close Video">&times;</button>
         </div>
         <div class="video-wrapper">
-            <video id="robotVideo" controls playsinline preload="metadata">
+            <video id="robotVideo" controls playsinline preload="metadata" muted>
                 <source src="videos/ai-robot-demo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
         <div class="video-modal-footer">
-            <p><i class="fa-solid fa-circle-info" style="color:var(--lime); margin-right:6px;"></i> Video playing inside website. Click anywhere outside or press ESC to close.</p>
+            <p><i class="fa-solid fa-volume-xmark" style="color:var(--lime); margin-right:6px;"></i> Silent Demonstration Video (Muted). Click anywhere outside or press ESC to close.</p>
         </div>
     </div>
 </div>
 
 <script>
 /* ================= AI ROBOT VIDEO PLAYER ================= */
+
+function openCertModal(){
+    const modal = document.getElementById("certModal");
+    if(modal){
+        modal.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+}
+
+function closeCertModal(event){
+    if(event && event.target && event.target.closest && event.target.closest('.cert-modal-content') && !event.target.classList.contains('docs-close-btn')){
+        return;
+    }
+    const modal = document.getElementById("certModal");
+    if(modal){
+        modal.classList.remove("active");
+        document.body.style.overflow = "auto";
+    }
+}
 
 function openRobotDocs(){
     const modal = document.getElementById("docsModal");
@@ -2708,6 +2880,8 @@ function openRobotVideo(){
         modal.classList.add("active");
         document.body.style.overflow = "hidden";
         video.currentTime = 0;
+        video.muted = true;
+        video.volume = 0;
         video.play().catch(e => {
             console.log("Autoplay blocked or user gesture required:", e);
         });
@@ -2731,6 +2905,7 @@ document.addEventListener("keydown", function(e){
     if(e.key === "Escape"){
         closeRobotVideo();
         closeRobotDocs();
+        closeCertModal();
     }
 });
 </script>
