@@ -14,10 +14,7 @@ dist-ssr/
 .env.local
 .env.*.local
 
-# Environment files
-.env
-.env.*
-!.env.example
+
 
 # Dependencies and build files
 node_modules/
@@ -37,3 +34,8 @@ dist/
 # Local tools
 tools/node.zip
 tools/nodejs/
+
+# Environment files
+.env
+.env.*
+!.env.example
