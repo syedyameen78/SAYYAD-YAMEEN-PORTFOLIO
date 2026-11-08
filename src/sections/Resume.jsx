@@ -50,6 +50,8 @@ export default function Resume() {
               <a
                 href={profile.resumeUrl}
                 download="sayyad-yameen-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-luxury px-5 py-2.5 rounded-full text-xs font-semibold tracking-tight flex items-center gap-2 shadow-lg"
               >
                 <Download className="w-3.5 h-3.5" />
@@ -158,6 +160,8 @@ export default function Resume() {
                 <a
                   href={profile.resumeUrl}
                   download="sayyad-yameen-resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn-luxury px-5 py-2 rounded-full text-xs font-semibold flex items-center gap-2"
                 >
                   <Download className="w-3.5 h-3.5" />

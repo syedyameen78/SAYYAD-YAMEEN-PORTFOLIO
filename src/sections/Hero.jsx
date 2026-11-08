@@ -102,6 +102,8 @@ export default function Hero() {
               <a
                 href={profile.resumeUrl}
                 download="sayyad-yameen-resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="editorial-link text-stone-700 dark:text-stone-300 hover:text-stone-950 dark:hover:text-white flex items-center gap-1.5"
               >
                 <span>CV</span>
