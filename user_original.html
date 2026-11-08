@@ -1,0 +1,1962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SAYYAD | AI/ML Developer</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css">
+
+<style>
+
+/* ================= RESET ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+:root{
+    --lime:#D4FF00;
+    --black:#050505;
+    --dark:#0b0b0b;
+    --card:#111;
+    --gray:#999;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-track{
+    background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+    background:var(--lime);
+    border-radius:20px;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    height:80px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 8%;
+    background:rgba(5,5,5,.95);
+    border-bottom:1px solid #222;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo i{
+    font-size:25px;
+    color:var(--lime);
+}
+
+.logo h2{
+    font-size:22px;
+    letter-spacing:2px;
+}
+
+nav ul{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+nav ul li a{
+    font-size:14px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:var(--lime);
+}
+
+.nav-button{
+    padding:11px 20px;
+    border:0;
+    border-radius:6px;
+    background:var(--lime);
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.menu-btn{
+    display:none;
+    font-size:25px;
+    color:var(--lime);
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+#home{
+    min-height:calc(100vh - 80px);
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.60),
+        rgba(0,0,0,.85)
+    ),
+    url("WhatsApp Image 2026-01-06 at 9.06.56 PM.jpeg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+
+    padding:50px 20px;
+    position:relative;
+}
+
+/* animated glow */
+
+#home::before{
+    content:"";
+    position:absolute;
+    width:400px;
+    height:400px;
+    background:var(--lime);
+    filter:blur(180px);
+    opacity:.08;
+    border-radius:50%;
+}
+
+.hero-content{
+    max-width:900px;
+    position:relative;
+    z-index:2;
+}
+
+.badge{
+    display:inline-block;
+    padding:9px 20px;
+    border:1px solid #555;
+    border-radius:30px;
+    color:var(--lime);
+    background:rgba(255,255,255,.04);
+    margin-bottom:25px;
+}
+
+.hero-content h1{
+    font-size:80px;
+    letter-spacing:5px;
+    margin-bottom:15px;
+}
+
+.hero-content h1 span{
+    color:var(--lime);
+}
+
+.hero-content h2{
+    font-size:28px;
+    font-weight:normal;
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+#typing{
+    color:var(--lime);
+}
+
+.hero-content p{
+    color:#bbb;
+    line-height:1.8;
+    max-width:700px;
+    margin:auto;
+    margin-bottom:30px;
+}
+
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:7px;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(212,255,0,.2);
+}
+
+.btn-primary{
+    background:var(--lime);
+    color:black;
+}
+
+.btn-secondary{
+    background:transparent;
+    border:1px solid #666;
+    color:white;
+}
+
+/* ================= COMMON ================= */
+
+.section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title span{
+    color:var(--lime);
+    font-size:14px;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:45px;
+    margin-top:10px;
+}
+
+.section-title p{
+    color:#888;
+    margin-top:15px;
+}
+
+/* ================= STATS ================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    background:#080808;
+}
+
+.stat{
+    text-align:center;
+    padding:30px;
+    border:1px solid #222;
+    border-radius:12px;
+    background:#101010;
+}
+
+.stat i{
+    font-size:30px;
+    color:var(--lime);
+    margin-bottom:15px;
+}
+
+.stat h2{
+    font-size:35px;
+}
+
+.stat p{
+    color:#888;
+    margin-top:8px;
+}
+
+/* ================= ABOUT ================= */
+
+#about{
+    background:#0a0a0a;
+}
+
+.about-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image{
+    height:450px;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid #333;
+}
+
+.about-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.about-content h3{
+    font-size:35px;
+    margin-bottom:20px;
+}
+
+.about-content h3 span{
+    color:var(--lime);
+}
+
+.about-content p{
+    color:#aaa;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.about-info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-top:25px;
+}
+
+.info-box{
+    padding:20px;
+    background:#111;
+    border:1px solid #222;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.info-box:hover{
+    border-color:var(--lime);
+    transform:translateY(-5px);
+}
+
+.info-box strong{
+    display:block;
+    color:var(--lime);
+    margin-bottom:7px;
+}
+
+/* ================= EDUCATION ================= */
+
+#education{
+    background:#050505;
+}
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+    border-left:2px solid var(--lime);
+    padding-left:30px;
+}
+
+.timeline-item{
+    background:#111;
+    padding:25px;
+    margin-bottom:25px;
+    border:1px solid #222;
+    border-radius:12px;
+    position:relative;
+}
+
+.timeline-item::before{
+    content:"";
+    position:absolute;
+    left:-40px;
+    top:30px;
+    width:16px;
+    height:16px;
+    background:var(--lime);
+    border-radius:50%;
+}
+
+.timeline-item h3{
+    color:var(--lime);
+    margin-bottom:8px;
+}
+
+.timeline-item span{
+    color:#777;
+    font-size:14px;
+}
+
+.timeline-item p{
+    color:#aaa;
+    margin-top:12px;
+    line-height:1.6;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.skill{
+    background:#111;
+    padding:25px;
+    border:1px solid #222;
+    border-radius:12px;
+}
+
+.skill-header{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+}
+
+.skill-header span:last-child{
+    color:var(--lime);
+}
+
+.progress{
+    width:100%;
+    height:8px;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-bar{
+    height:100%;
+    background:var(--lime);
+    width:0;
+    transition:2s;
+}
+
+/* ================= SERVICES ================= */
+
+#services{
+    background:#0a0a0a;
+}
+
+.services-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.service{
+    padding:40px;
+    background:#111;
+    border-radius:12px;
+    border:1px solid #222;
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-8px);
+    border-color:var(--lime);
+}
+
+.service i{
+    font-size:35px;
+    color:var(--lime);
+    margin-bottom:20px;
+}
+
+.service h3{
+    font-size:22px;
+    margin-bottom:15px;
+}
+
+.service p{
+    color:#999;
+    line-height:1.7;
+}
+
+/* ================= EXPERIENCE ================= */
+
+.experience-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+.experience-card{
+    padding:30px;
+    background:#111;
+    border:1px solid #222;
+    border-radius:12px;
+}
+
+.experience-card i{
+    color:var(--lime);
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.experience-card h3{
+    margin-bottom:8px;
+}
+
+.experience-card span{
+    color:var(--lime);
+    font-size:14px;
+}
+
+.experience-card p{
+    color:#999;
+    line-height:1.7;
+    margin-top:15px;
+}
+
+/* ================= PROJECTS ================= */
+
+#projects{
+    background:#0a0a0a;
+}
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.project{
+    background:#111;
+    border:1px solid #222;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-8px);
+    border-color:var(--lime);
+}
+
+.project-image{
+    height:220px;
+    background:linear-gradient(135deg,#222,#050505);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.project-image i{
+    font-size:70px;
+    color:var(--lime);
+}
+
+.project-content{
+    padding:25px;
+}
+
+.project-content h3{
+    margin-bottom:10px;
+}
+
+.project-content p{
+    color:#888;
+    line-height:1.6;
+    margin-bottom:20px;
+}
+
+.project-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.project-link{
+    color:var(--lime);
+    font-weight:bold;
+}
+
+/* ================= CERTIFICATIONS ================= */
+
+.cert-container{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.cert{
+    background:#111;
+    padding:30px;
+    border:1px solid #222;
+    border-radius:12px;
+    text-align:center;
+    transition:.3s;
+}
+
+.cert:hover{
+    transform:translateY(-7px);
+    border-color:var(--lime);
+}
+
+.cert i{
+    font-size:40px;
+    color:var(--lime);
+    margin-bottom:15px;
+}
+
+.cert h3{
+    margin-bottom:10px;
+}
+
+.cert p{
+    color:#888;
+}
+
+/* ================= RESUME ================= */
+
+.resume-box{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    padding:60px 30px;
+    border:1px solid #222;
+    background:#101010;
+    border-radius:15px;
+}
+
+.resume-box h2{
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.resume-box p{
+    color:#888;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+/* ================= CONTACT ================= */
+
+#contact{
+    background:#0a0a0a;
+}
+
+.contact-container{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-container p{
+    color:#999;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.contact-form{
+    display:grid;
+    gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:16px;
+    background:#111;
+    color:white;
+    border:1px solid #333;
+    border-radius:8px;
+    outline:none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+    border-color:var(--lime);
+}
+
+.contact-form textarea{
+    height:150px;
+    resize:none;
+}
+
+.contact-form button{
+    padding:15px;
+    border:0;
+    background:var(--lime);
+    color:black;
+    font-weight:bold;
+    border-radius:7px;
+    cursor:pointer;
+}
+
+.social{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.social a{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid #333;
+    border-radius:50%;
+    transition:.3s;
+}
+
+.social a:hover{
+    background:var(--lime);
+    color:black;
+    transform:translateY(-5px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:30px 8%;
+    text-align:center;
+    border-top:1px solid #222;
+    background:#050505;
+}
+
+footer p{
+    color:#777;
+}
+
+footer span{
+    color:var(--lime);
+}
+
+/* ================= BACK TO TOP ================= */
+
+#topBtn{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    width:45px;
+    height:45px;
+    border:0;
+    border-radius:50%;
+    background:var(--lime);
+    color:black;
+    cursor:pointer;
+    display:none;
+    z-index:999;
+}
+
+/* ================= ANIMATION ================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        padding:0 5%;
+    }
+
+    nav ul{
+        display:none;
+        position:absolute;
+        top:80px;
+        left:0;
+        width:100%;
+        background:#080808;
+        flex-direction:column;
+        padding:25px;
+        text-align:center;
+        border-bottom:1px solid #222;
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-button{
+        display:none;
+    }
+
+    .hero-content h1{
+        font-size:55px;
+    }
+
+    .about-container{
+        grid-template-columns:1fr;
+    }
+
+    .skills-container{
+        grid-template-columns:1fr;
+    }
+
+    .services-container{
+        grid-template-columns:1fr;
+    }
+
+    .projects-container{
+        grid-template-columns:1fr;
+    }
+
+    .experience-container{
+        grid-template-columns:1fr;
+    }
+
+    .cert-container{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .logo h2{
+        font-size:17px;
+    }
+
+    .hero-content h1{
+        font-size:42px;
+        letter-spacing:2px;
+    }
+
+    .hero-content h2{
+        font-size:21px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .section{
+        padding:70px 5%;
+    }
+
+    .section-title h2{
+        font-size:35px;
+    }
+
+    .about-info{
+        grid-template-columns:1fr;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        height:350px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        <i class="fa-solid fa-code"></i>
+        <h2>SAYYAD</h2>
+    </div>
+
+    <ul id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#contact">
+        <button class="nav-button">Let's Talk</button>
+    </a>
+
+    <div class="menu-btn" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+    <div class="hero-content">
+
+        <span class="badge">
+            👋 Welcome to my portfolio
+        </span>
+
+        <h1>
+            I'M <span>SAYYAD</span>
+        </h1>
+
+        <h2>
+            <span id="typing"></span>
+        </h2>
+
+        <p>
+            I build modern websites, intelligent applications,
+            AI/ML projects and innovative digital solutions
+            using technology, creativity and problem-solving.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#projects">
+                <button class="btn btn-primary">
+                    <i class="fa-solid fa-rocket"></i>
+                    View Projects
+                </button>
+            </a>
+
+            <a href="#contact">
+                <button class="btn btn-secondary">
+                    <i class="fa-solid fa-envelope"></i>
+                    Contact Me
+                </button>
+            </a>
+
+            <a href="resume.pdf" download>
+                <button class="btn btn-secondary">
+                    <i class="fa-solid fa-download"></i>
+                    Resume
+                </button>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="section stats reveal">
+
+    <div class="stat">
+        <i class="fa-solid fa-code"></i>
+        <h2>10+</h2>
+        <p>Projects</p>
+    </div>
+
+    <div class="stat">
+        <i class="fa-solid fa-laptop-code"></i>
+        <h2>8+</h2>
+        <p>Technologies</p>
+    </div>
+
+    <div class="stat">
+        <i class="fa-solid fa-certificate"></i>
+        <h2>5+</h2>
+        <p>Certificates</p>
+    </div>
+
+    <div class="stat">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h2>20+</h2>
+        <p>Ideas</p>
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section" id="about">
+
+    <div class="section-title reveal">
+
+        <span>Who I Am</span>
+
+        <h2>About Me</h2>
+
+        <p>
+            A little information about me
+        </p>
+
+    </div>
+
+    <div class="about-container reveal">
+
+        <div class="about-image">
+
+            <img
+            src="WhatsApp Image 2026-01-06 at 9.06.56 PM.jpeg"
+            alt="Sayyad">
+
+        </div>
+
+        <div class="about-content">
+
+            <h3>
+                Hello, I'm <span>Sayyad</span>
+            </h3>
+
+            <p>
+                I am passionate about technology, programming,
+                artificial intelligence and building real-world
+                digital solutions.
+            </p>
+
+            <p>
+                I enjoy learning new technologies and converting
+                ideas into useful projects that can solve real
+                problems.
+            </p>
+
+            <div class="about-info">
+
+                <div class="info-box">
+                    <strong>Focus</strong>
+                    <small>AI & ML / Web Development</small>
+                </div>
+
+                <div class="info-box">
+                    <strong>Interest</strong>
+                    <small>Artificial Intelligence</small>
+                </div>
+
+                <div class="info-box">
+                    <strong>Projects</strong>
+                    <small>Real World Solutions</small>
+                </div>
+
+                <div class="info-box">
+                    <strong>Learning</strong>
+                    <small>Full Stack Development</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section class="section" id="education">
+
+    <div class="section-title reveal">
+
+        <span>My Journey</span>
+
+        <h2>Education</h2>
+
+        <p>
+            My academic journey
+        </p>
+
+    </div>
+
+    <div class="timeline reveal">
+
+        <div class="timeline-item">
+
+            <h3>Diploma in AI & ML</h3>
+
+            <span>2023 — 2026</span>
+
+            <p>
+                Studying Artificial Intelligence and Machine
+                Learning with programming, databases,
+                web technologies and practical projects.
+            </p>
+
+        </div>
+
+        <div class="timeline-item">
+
+            <h3>Higher Secondary Education</h3>
+
+            <span>Completed</span>
+
+            <p>
+                Built the foundation for programming,
+                mathematics and computer science.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section class="section" id="skills">
+
+    <div class="section-title reveal">
+
+        <span>My Expertise</span>
+
+        <h2>Skills</h2>
+
+        <p>
+            Technologies I work with
+        </p>
+
+    </div>
+
+    <div class="skills-container reveal">
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <span>HTML</span>
+                <span>90%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" data-width="90%"></div>
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <span>CSS</span>
+                <span>85%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" data-width="85%"></div>
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <span>JavaScript</span>
+                <span>75%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" data-width="75%"></div>
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <span>Python</span>
+                <span>85%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" data-width="85%"></div>
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <span>Machine Learning</span>
+                <span>70%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" data-width="70%"></div>
+            </div>
+
+        </div>
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <span>SQL / DBMS</span>
+                <span>80%</span>
+            </div>
+
+            <div class="progress">
+                <div class="progress-bar" data-width="80%"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section" id="services">
+
+    <div class="section-title reveal">
+
+        <span>What I Do</span>
+
+        <h2>Services</h2>
+
+        <p>
+            Solutions I can build
+        </p>
+
+    </div>
+
+    <div class="services-container reveal">
+
+        <div class="service">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Modern, responsive and user-friendly
+                websites using HTML, CSS and JavaScript.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>AI & ML</h3>
+
+            <p>
+                Intelligent applications and machine
+                learning solutions using Python.
+            </p>
+
+        </div>
+
+        <div class="service">
+
+            <i class="fa-solid fa-mobile-screen"></i>
+
+            <h3>Application Development</h3>
+
+            <p>
+                Building useful applications designed
+                to solve real-world problems.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="section" id="experience">
+
+    <div class="section-title reveal">
+
+        <span>My Experience</span>
+
+        <h2>Experience</h2>
+
+        <p>
+            Learning through practical development
+        </p>
+
+    </div>
+
+    <div class="experience-container reveal">
+
+        <div class="experience-card">
+
+            <i class="fa-solid fa-laptop-code"></i>
+
+            <h3>AI/ML Projects</h3>
+
+            <span>Project Development</span>
+
+            <p>
+                Worked on AI/ML concepts and practical
+                projects using Python and machine learning.
+            </p>
+
+        </div>
+
+        <div class="experience-card">
+
+            <i class="fa-solid fa-globe"></i>
+
+            <h3>Web Development</h3>
+
+            <span>Frontend Development</span>
+
+            <p>
+                Building responsive websites with modern
+                HTML, CSS and JavaScript techniques.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section class="section" id="projects">
+
+    <div class="section-title reveal">
+
+        <span>My Work</span>
+
+        <h2>Projects</h2>
+
+        <p>
+            Some things I have built
+        </p>
+
+    </div>
+
+    <div class="projects-container reveal">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="project-content">
+
+                <h3>AI Robot</h3>
+
+                <p>
+                    Voice controlled robot with object
+                    detection, sensors and automated movement.
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                <i class="fa-solid fa-film"></i>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Movie Recommendation</h3>
+
+                <p>
+                    Movie recommendation system using
+                    Python and machine learning.
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Portfolio Website</h3>
+
+                <p>
+                    Modern responsive personal portfolio
+                    website with animations and dark UI.
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Fake Review Detection</h3>
+
+                <p>
+                    Machine learning system designed
+                    to identify suspicious reviews.
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 5 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                <i class="fa-solid fa-credit-card"></i>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Fraud Detection</h3>
+
+                <p>
+                    Machine learning project for detecting
+                    potentially fraudulent transactions.
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PROJECT 6 -->
+
+        <div class="project">
+
+            <div class="project-image">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <div class="project-content">
+
+                <h3>Smart IoT System</h3>
+
+                <p>
+                    IoT-based project combining sensors,
+                    automation and intelligent monitoring.
+                </p>
+
+                <div class="project-buttons">
+
+                    <a href="#" class="project-link">
+                        GitHub →
+                    </a>
+
+                    <a href="#" class="project-link">
+                        Demo →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section class="section" id="certifications">
+
+    <div class="section-title reveal">
+
+        <span>Achievements</span>
+
+        <h2>Certifications</h2>
+
+        <p>
+            Courses and certifications
+        </p>
+
+    </div>
+
+    <div class="cert-container reveal">
+
+        <div class="cert">
+
+            <i class="fa-brands fa-python"></i>
+
+            <h3>Python</h3>
+
+            <p>
+                Python Programming Certification
+            </p>
+
+        </div>
+
+        <div class="cert">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <h3>Machine Learning</h3>
+
+            <p>
+                Machine Learning Fundamentals
+            </p>
+
+        </div>
+
+        <div class="cert">
+
+            <i class="fa-solid fa-code"></i>
+
+            <h3>Web Development</h3>
+
+            <p>
+                Full Stack Web Development
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= RESUME ================= -->
+
+<section class="section">
+
+    <div class="resume-box reveal">
+
+        <h2>Want to know more about me?</h2>
+
+        <p>
+            Download my resume to learn more about my
+            education, skills, projects and experience.
+        </p>
+
+        <a href="resume.pdf" download>
+
+            <button class="btn btn-primary">
+
+                <i class="fa-solid fa-file-arrow-down"></i>
+
+                Download Resume
+
+            </button>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section" id="contact">
+
+    <div class="section-title reveal">
+
+        <span>Get In Touch</span>
+
+        <h2>Contact Me</h2>
+
+    </div>
+
+    <div class="contact-container reveal">
+
+        <p>
+            Have a project idea or want to work together?
+            Feel free to contact me.
+        </p>
+
+        <form
+        class="contact-form"
+        onsubmit="sendMessage(event)">
+
+            <input
+            type="text"
+            id="name"
+            placeholder="Your Name"
+            required>
+
+            <input
+            type="email"
+            id="email"
+            placeholder="Your Email"
+            required>
+
+            <textarea
+            id="message"
+            placeholder="Your Message"
+            required></textarea>
+
+            <button type="submit">
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+                Send Message
+
+            </button>
+
+        </form>
+
+
+        <div class="social">
+
+            <a href="https://github.com/"
+            target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://linkedin.com/"
+            target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://instagram.com/"
+            target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://x.com/"
+            target="_blank">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026
+        <span>SAYYAD</span>.
+        All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn" onclick="goTop()">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+/* ================= TYPING EFFECT ================= */
+
+const words = [
+    "AI/ML Developer",
+    "Python Developer",
+    "Web Developer",
+    "Creative Developer",
+    "Technology Enthusiast"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    const typing = document.getElementById("typing");
+
+    const word = words[wordIndex];
+
+    if(!deleting){
+
+        typing.textContent =
+        word.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === word.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect,1200);
+
+            return;
+        }
+
+    }else{
+
+        typing.textContent =
+        word.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex === words.length){
+                wordIndex = 0;
+            }
+
+        }
+
+    }
+
+    setTimeout(typeEffect,deleting ? 50 : 100);
+}
+
+typeEffect();
+
+
+/* ================= MOBILE MENU ================= */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navMenu")
+    .classList.toggle("active");
+
+}
+
+
+/* ================= SCROLL REVEAL ================= */
+
+function reveal(){
+
+    const reveals =
+    document.querySelectorAll(".reveal");
+
+    reveals.forEach(element => {
+
+        const windowHeight =
+        window.innerHeight;
+
+        const elementTop =
+        element.getBoundingClientRect().top;
+
+        if(elementTop < windowHeight - 100){
+
+            element.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",reveal);
+
+reveal();
+
+
+/* ================= SKILL BARS ================= */
+
+function skillsAnimation(){
+
+    const bars =
+    document.querySelectorAll(".progress-bar");
+
+    bars.forEach(bar => {
+
+        const top =
+        bar.getBoundingClientRect().top;
+
+        if(top < window.innerHeight - 50){
+
+            bar.style.width =
+            bar.getAttribute("data-width");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll",skillsAnimation);
+
+skillsAnimation();
+
+
+/* ================= BACK TO TOP ================= */
+
+window.addEventListener("scroll",function(){
+
+    const button =
+    document.getElementById("topBtn");
+
+    if(window.scrollY > 400){
+
+        button.style.display = "block";
+
+    }else{
+
+        button.style.display = "none";
+
+    }
+
+});
+
+
+function goTop(){
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* ================= CONTACT ================= */
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    const name =
+    document.getElementById("name").value;
+
+    const email =
+    document.getElementById("email").value;
+
+    const message =
+    document.getElementById("message").value;
+
+    const subject =
+    encodeURIComponent(
+        "Portfolio Contact from " + name
+    );
+
+    const body =
+    encodeURIComponent(
+        "Name: " + name +
+        "\nEmail: " + email +
+        "\n\nMessage:\n" + message
+    );
+
+    window.location.href =
+    `mailto:yourmail@gmail.com?subject=${subject}&body=${body}`;
+
+}
+
+</script>
+
+</body>
+</html>I already have a complete HTML, CSS, and JavaScript portfolio website.

@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #fbfaf7;
+  --bg-surface: #f5f3ee;
+  --bg-card: #f0ece3;
+  --text-primary: #141416;
+  --text-secondary: #575652;
+  --text-muted: #8c8983;
+  --border-subtle: #e5e0d6;
+  --border-strong: #d2ccc0;
+}
+
+.dark {
+  --bg-primary: #0a0a0c;
+  --bg-surface: #111115;
+  --bg-card: #16161c;
+  --text-primary: #f7f6f2;
+  --text-secondary: #c2c0b6;
+  --text-muted: #78766e;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Minimal Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+/* Hairline utility borders */
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.border-strong {
+  border-color: var(--border-strong);
+}
+
+/* Editorial Serif Headlines */
+.headline-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.subheadline-editorial {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Editorial Minimalist Link Underline Interaction */
+.editorial-link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.editorial-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-link:hover::after {
+  width: 100%;
+}
+
+/* Smooth Image Reveal & Parallax Container */
+.editorial-image-frame {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--bg-surface);
+}
+
+.editorial-image-frame img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.8s ease;
+}
+
+.editorial-image-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* 3D Canvas Canvas Layer */
+.canvas-3d-container {
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

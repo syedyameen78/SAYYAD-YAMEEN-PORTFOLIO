@@ -1,0 +1,127 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 4 0 R 5 0 R] /Count 3 >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R /F2 7 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 2226 >>
+stream
+BT
+/F2 18 Tf 50 740 Td (Voice Controlled Object Detection Robot Using Arduino) Tj
+/F1 11 Tf 0 -22 Td (Author: YAMEEN SAYYAD  |  Course: Artificial Intelligence & Machine Learning (2025-2026)) Tj
+/F1 9 Tf 0 -14 Td (Academic Engineering Project Documentation  |  Sayyad Yameen Portfolio) Tj
+0 0 0 rg
+0.5 w
+50 690 m 560 690 l S
+/F2 13 Tf 50 665 Td (1. ABSTRACT) Tj
+/F1 10 Tf 0 -18 Td (Robotics and automation technologies are becoming increasingly important in modern engineering.) Tj
+0 -14 Td (This project focuses on the design and implementation of a voice-controlled robot with obstacle) Tj
+0 -14 Td (detection capability using the Arduino platform. The robot is controlled through Bluetooth using) Tj
+0 -14 Td (the HC-05 module connecting to a smartphone application. Commands are processed by an Arduino Uno) Tj
+0 -14 Td (microcontroller driving high-torque DC motors via an L298N dual H-bridge motor driver.) Tj
+0 -14 Td (To ensure collision safety, an HC-SR04 ultrasonic sensor continuously profiles front clearance.) Tj
+0 -14 Td (If an obstacle is detected within 20 cm, the robot automatically applies electronic braking.) Tj
+/F2 13 Tf 0 -30 Td (2. INTRODUCTION & PROBLEM STATEMENT) Tj
+/F1 10 Tf 0 -18 Td (Traditional remote-controlled robots depend entirely on human operators. If reaction time lags,) Tj
+0 -14 Td (collisions occur. Furthermore, manual joysticks lack natural accessibility for disabled users.) Tj
+0 -14 Td (This project eliminates manual controllers by introducing natural speech recognition coupled with) Tj
+0 -14 Td (continuous autonomous obstacle sensing, achieving a safe, cost-effective, and user-friendly system.) Tj
+/F2 13 Tf 0 -30 Td (3. PROJECT OBJECTIVES) Tj
+/F1 10 Tf 0 -18 Td (- Design an intuitive voice-controlled robotic platform responsive to natural speech.) Tj
+0 -14 Td (- Establish stable wireless Bluetooth RF communication between mobile devices and Arduino.) Tj
+0 -14 Td (- Implement bidirectional motor control for forward, reverse, left, right, and stop motion.) Tj
+0 -14 Td (- Integrate ultrasonic distance measurement with automatic emergency collision stoppage.) Tj
+0 -14 Td (- Deliver an open, modular platform for educational robotics and embedded systems learning.) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R /F2 7 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 1892 >>
+stream
+BT
+/F2 15 Tf 50 740 Td (Voice Controlled Object Detection Robot - Hardware & Principle) Tj
+/F1 9 Tf 0 -14 Td (Yameen Sayyad  |  Artificial Intelligence & Machine Learning) Tj
+50 715 m 560 715 l S
+/F2 13 Tf 50 690 Td (4. HARDWARE SPECIFICATIONS) Tj
+/F2 10 Tf 0 -18 Td (1. Arduino Uno Microcontroller (Brain of System):) Tj
+/F1 10 Tf 0 -14 Td (   ATmega328P MCU @ 16 MHz clock, 14 digital I/O pins (6 PWM), 6 analog inputs, 5V operating logic.) Tj
+/F2 10 Tf 0 -18 Td (2. L298N Dual H-Bridge Motor Driver Module:) Tj
+/F1 10 Tf 0 -14 Td (   Controls two DC motors independently. 5V-35V operating range, 2A peak current per channel.) Tj
+/F2 10 Tf 0 -18 Td (3. HC-SR04 Ultrasonic Distance Sensor:) Tj
+/F1 10 Tf 0 -14 Td (   Frequency: 40 kHz, range: 2 cm to 400 cm, accuracy: +/-3 mm, 15-degree measuring angle.) Tj
+/F2 10 Tf 0 -18 Td (4. HC-05 Bluetooth Serial Module:) Tj
+/F1 10 Tf 0 -14 Td (   Bluetooth 2.0+EDR standard, UART serial communication at 9600 baud, 10m wireless range.) Tj
+/F2 10 Tf 0 -18 Td (5. DC Geared Motors & 12V Power Supply:) Tj
+/F1 10 Tf 0 -14 Td (   High-torque DC gear motors paired with rechargeable lithium battery pack for sustained operation.) Tj
+/F2 13 Tf 0 -32 Td (5. WORKING PRINCIPLE & REACTIVE CONTROL LOOP) Tj
+/F1 10 Tf 0 -18 Td (The system coordinates two concurrent operational routines:) Tj
+0 -14 Td (1. Voice Control Mode: Smartphone app converts speech to text tokens transmitted over Bluetooth.) Tj
+0 -14 Td (   Arduino reads serial characters and commands motor driver pins for directional steering.) Tj
+0 -14 Td (2. Obstacle Avoidance Mode: Ultrasonic Trig pin fires 10us acoustic pulse; Echo pin measures bounce.) Tj
+0 -14 Td (   Distance = (Echo Time * Speed of Sound) / 2. If Distance < 20 cm, Arduino stops motors immediately.) Tj
+0 -14 Td (Safety Override: Even if user shouts 'Forward', the robot refuses movement until obstacle is removed.) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 6 0 R /F2 7 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 1771 >>
+stream
+BT
+/F2 15 Tf 50 740 Td (Voice Controlled Object Detection Robot - Applications & Conclusion) Tj
+/F1 9 Tf 0 -14 Td (Yameen Sayyad  |  Artificial Intelligence & Machine Learning) Tj
+50 715 m 560 715 l S
+/F2 13 Tf 50 690 Td (6. PRACTICAL APPLICATIONS) Tj
+/F1 10 Tf 0 -18 Td (- Industrial Material Handling: Safe transport of parts across automated factory floors.) Tj
+0 -14 Td (- Assistive Mobility Devices: Hands-free voice operation for physically challenged individuals.) Tj
+0 -14 Td (- Smart Home Service Robots: Foundation for domestic cleaning, surveillance, and automated fetching.) Tj
+0 -14 Td (- Hazardous Environment Reconnaissance: Safe remote exploration where human access is hazardous.) Tj
+0 -14 Td (- Academic Research: Practical demonstration platform for robotics, IoT, and embedded programming.) Tj
+/F2 13 Tf 0 -30 Td (7. KEY ADVANTAGES) Tj
+/F1 10 Tf 0 -18 Td (- Natural hands-free speech operation without cumbersome physical remotes.) Tj
+0 -14 Td (- Continuous autonomous safety override prevents physical collisions and damage.) Tj
+0 -14 Td (- Affordable, open-source architecture built with standard modular components.) Tj
+0 -14 Td (- Expandable design: easily accepts camera modules (ESP32-CAM), GPS, and WiFi telemetry.) Tj
+/F2 13 Tf 0 -30 Td (8. CONCLUSION) Tj
+/F1 10 Tf 0 -18 Td (The Voice Controlled Object Detection Robot demonstrates a reliable integration of embedded) Tj
+0 -14 Td (control, Bluetooth wireless communication, ultrasonic sensing, and motor actuation. The system) Tj
+0 -14 Td (fulfills all stated design objectives, providing an interactive, educational, and safe robotic platform.) Tj
+0 -26 Td (Presented By: YAMEEN SAYYAD  |  AI & ML Developer & Data Science Student) Tj
+0 -14 Td (Website: Sayyad Yameen Portfolio Engine) Tj
+ET
+endstream
+endobj
+xref
+0 11
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000272 00000 n 
+0000002686 00000 n 
+0000004766 00000 n 
+0000000127 00000 n 
+0000000197 00000 n 
+0000000408 00000 n 
+0000002822 00000 n 
+0000004903 00000 n 
+trailer
+<< /Size 11 /Root 1 0 R >>
+startxref
+6727
+%%EOF
